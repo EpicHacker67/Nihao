@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NiHao Food Bank Initiative Impact - See the difference we're making in North Texas through volunteer efforts, donations, and community partnerships.">
+  <title>Our Impact | NiHao Food Bank Initiative</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .impact-stat {
+      text-align: center;
+      padding: var(--space-lg);
+      background: var(--pure-white);
+      border-radius: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-medium);
+    }
+    .impact-stat:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+    .impact-number {
+      font-family: var(--font-headline);
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, var(--nihao-red) 0%, var(--ntfb-orange) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .impact-label {
+      font-family: var(--font-headline);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ntfb-green);
+      margin-bottom: 0.5rem;
+    }
+    .impact-desc {
+      color: var(--soft-gray);
+      font-size: 0.95rem;
+    }
+    .timeline-year {
+      position: relative;
+      padding: var(--space-lg) 0;
+      border-left: 3px solid var(--nihao-yellow);
+      margin-left: 60px;
+      padding-left: var(--space-lg);
+    }
+    .timeline-year::before {
+      content: attr(data-year);
+      position: absolute;
+      left: -80px;
+      top: var(--space-lg);
+      width: 60px;
+      font-family: var(--font-headline);
+      font-weight: 900;
+      font-size: 1.25rem;
+      color: var(--ntfb-green);
+    }
+    .timeline-year::after {
+      content: '';
+      position: absolute;
+      left: -9px;
+      top: calc(var(--space-lg) + 8px);
+      width: 16px;
+      height: 16px;
+      background: var(--nihao-yellow);
+      border: 4px solid var(--pure-white);
+      border-radius: 50%;
+      box-shadow: var(--shadow-sm);
+    }
+    .milestone-card {
+      background: var(--pure-white);
+      border-radius: 12px;
+      padding: var(--space-md);
+      margin-bottom: var(--space-sm);
+      box-shadow: var(--shadow-sm);
+    }
+    .milestone-card h4 {
+      color: var(--ntfb-green);
+      margin-bottom: 0.5rem;
+    }
+    .media-card {
+      background: var(--pure-white);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-medium);
+    }
+    .media-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+    .media-card-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .media-card-body {
+      padding: var(--space-md);
+    }
+    .media-source {
+      display: inline-block;
+      font-family: var(--font-headline);
+      font-weight: 600;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--ntfb-orange);
+      margin-bottom: 0.5rem;
+    }
+    .media-card h4 {
+      color: var(--friendly-gray);
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    .quote-block {
+      position: relative;
+      background: linear-gradient(135deg, var(--ntfb-green) 0%, #6a8236 100%);
+      border-radius: 20px;
+      padding: var(--space-lg);
+      color: var(--pure-white);
+      text-align: center;
+    }
+    .quote-block::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 6rem;
+      font-family: Georgia, serif;
+      opacity: 0.2;
+      line-height: 1;
+    }
+    .quote-text {
+      font-size: 1.5rem;
+      font-style: italic;
+      margin-bottom: var(--space-md);
+      position: relative;
+      z-index: 1;
+    }
+    .quote-author {
+      font-family: var(--font-headline);
+      font-weight: 600;
+      color: var(--nihao-yellow);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="media/logo.jpg" alt="NiHao Food Bank Initiative" class="logo-img">
+      </a>
+      <nav>
+        <button class="menu-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="programs.html" class="nav-link">Programs</a></li>
+          <li><a href="youth.html" class="nav-link">Youth Ambassadors</a></li>
+          <li><a href="join.html" class="nav-link">Join Us</a></li>
+          <li><a href="impact.html" class="nav-link active">Our Impact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero hero-sm">
+    <div class="hero-bg">
+      <img src="media/3. Charity Concert/2024 Photo/Check 1.jpg" alt="NiHao Impact">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Our Impact</h1>
+      <p class="hero-subtitle">Together, we're making a measurable difference in the fight against hunger in North Texas.</p>
+    </div>
+  </section>
+
+  <!-- Impact Stats -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">By the Numbers</span>
+        <h2 class="section-title">The Difference We've Made Together</h2>
+        <p class="section-desc">Every number represents real meals, real volunteers, and real impact on our North Texas neighbors.</p>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="impact-stat">
+          <div class="impact-number">2.6M+</div>
+          <div class="impact-label">Meals Enabled</div>
+          <p class="impact-desc">Nutritious meals provided to families facing food insecurity</p>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-number">500+</div>
+          <div class="impact-label">Youth Volunteers</div>
+          <p class="impact-desc">Young leaders developing skills while serving their community</p>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-number">50+</div>
+          <div class="impact-label">Events Hosted</div>
+          <p class="impact-desc">Packing days, concerts, drives, and community gatherings</p>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-number">10+</div>
+          <div class="impact-label">Partner Organizations</div>
+          <p class="impact-desc">Community groups working together for hunger relief</p>
+        </div>
+      </div>
+
+      <div class="grid grid-3 mt-lg">
+        <div class="impact-stat">
+          <div class="impact-number">$150K+</div>
+          <div class="impact-label">Funds Raised</div>
+          <p class="impact-desc">Donations directed to NTFB hunger relief programs</p>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-number">5,000+</div>
+          <div class="impact-label">Volunteer Hours</div>
+          <p class="impact-desc">Hours of service contributed by our volunteer community</p>
+        </div>
+        <div class="impact-stat">
+          <div class="impact-number">3</div>
+          <div class="impact-label">Years Strong</div>
+          <p class="impact-desc">Building momentum since our founding</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Block -->
+  <section class="section bg-sand">
+    <div class="container">
+      <div class="quote-block">
+        <p class="quote-text">"NiHao Food Bank Initiative has been an incredible partner in our mission to provide food and resources to our neighbors in need. Their passion, organization, and community mobilization are truly inspiring."</p>
+        <span class="quote-author">— North Texas Food Bank Leadership</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Milestones Timeline -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Journey</span>
+        <h2 class="section-title">Key Milestones</h2>
+      </div>
+
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="timeline-year" data-year="2022">
+          <div class="milestone-card">
+            <h4>NiHao Food Bank Initiative Founded</h4>
+            <p>A group of passionate community members came together with a vision to mobilize the Chinese American community for hunger relief.</p>
+          </div>
+          <div class="milestone-card">
+            <h4>First Packing Day</h4>
+            <p>Our inaugural volunteer event at the North Texas Food Bank brought together 50 volunteers who packed over 10,000 meals.</p>
+          </div>
+        </div>
+
+        <div class="timeline-year" data-year="2023">
+          <div class="milestone-card">
+            <h4>Youth Ambassador Program Launched</h4>
+            <p>Recognizing the passion of young volunteers, we created a dedicated program to develop youth leadership.</p>
+          </div>
+          <div class="milestone-card">
+            <h4>First Annual Charity Concert</h4>
+            <p>A sold-out event featuring local musicians raised significant funds and awareness for hunger relief.</p>
+          </div>
+          <div class="milestone-card">
+            <h4>1 Million Meals Milestone</h4>
+            <p>Through cumulative fundraising and volunteer efforts, we enabled our first million meals for North Texas families.</p>
+          </div>
+        </div>
+
+        <div class="timeline-year" data-year="2024">
+          <div class="milestone-card">
+            <h4>500+ Youth Ambassadors</h4>
+            <p>Our Youth Ambassador Program grew to include over 500 active young volunteers.</p>
+          </div>
+          <div class="milestone-card">
+            <h4>Community Partner Network Expands</h4>
+            <p>Formalized partnerships with 10+ community organizations to amplify our collective impact.</p>
+          </div>
+          <div class="milestone-card">
+            <h4>2.6 Million Meals Enabled</h4>
+            <p>A major milestone celebrating the cumulative impact of our community's generosity.</p>
+          </div>
+        </div>
+
+        <div class="timeline-year" data-year="2025">
+          <div class="milestone-card">
+            <h4>Continuing to Grow</h4>
+            <p>With your help, we're expanding our programs, reaching more neighbors, and developing more youth leaders than ever before.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media Coverage -->
+  <section class="section bg-sand">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">In the News</span>
+        <h2 class="section-title">Media Coverage</h2>
+        <p class="section-desc">Our work has been recognized by local and regional media outlets.</p>
+      </div>
+
+      <div class="grid grid-2" style="gap: var(--space-lg); margin-bottom: var(--space-lg);">
+        <!-- Video Coverage -->
+        <div class="media-card">
+          <div class="video-container" style="border-radius: 0;">
+            <video controls poster="media/6. Media/InsiderDFW.jpg">
+              <source src="media/6. Media/CW33 - Nihao Food Initiative partners with North Texas Food Bank.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="media-card-body">
+            <span class="media-source">CW33 News</span>
+            <h4>NiHao Food Initiative Partners with North Texas Food Bank</h4>
+            <p class="card-text">Local news coverage of our partnership with NTFB and the impact we're making together.</p>
+          </div>
+        </div>
+
+        <div class="media-card">
+          <div class="video-container" style="border-radius: 0;">
+            <video controls poster="media/6. Media/NiHao ACP Metro.jpg">
+              <source src="media/6. Media/Bing Xie_Feeding America.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="media-card-body">
+            <span class="media-source">Feeding America Feature</span>
+            <h4>Community Leadership in Action</h4>
+            <p class="card-text">NiHao founder Bing Xie discusses our mission and the power of community-driven hunger relief.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Press Images -->
+      <div class="grid grid-2" style="gap: var(--space-md);">
+        <div class="media-card">
+          <img src="media/6. Media/InsiderDFW.jpg" alt="Insider DFW Coverage" class="media-card-img">
+          <div class="media-card-body">
+            <span class="media-source">Insider DFW</span>
+            <h4>Community Spotlight: NiHao Food Initiative</h4>
+            <p class="card-text">Feature on our community impact and volunteer programs.</p>
+          </div>
+        </div>
+        <div class="media-card">
+          <img src="media/6. Media/NiHao ACP Metro.jpg" alt="ACP Metro Coverage" class="media-card-img">
+          <div class="media-card-body">
+            <span class="media-source">ACP Metro</span>
+            <h4>NiHao's Growing Impact in North Texas</h4>
+            <p class="card-text">Coverage of our expansion and community partnerships.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recognition Section -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Recognition</span>
+        <h2 class="section-title">Awards & Acknowledgments</h2>
+      </div>
+
+      <div class="grid grid-3">
+        <div class="feature-card">
+          <div class="feature-icon">🏆</div>
+          <h4>NTFB Partner Recognition</h4>
+          <p>Recognized by the North Texas Food Bank for outstanding volunteer mobilization and community impact.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">⭐</div>
+          <h4>Community Leadership Award</h4>
+          <p>Honored for bridging cultural communities in the fight against hunger.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🎖️</div>
+          <h4>Youth Development Excellence</h4>
+          <p>Recognized for our innovative Youth Ambassador Program and youth leadership development.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section bg-green">
+    <div class="container">
+      <h2>Be Part of Our Next Chapter</h2>
+      <p>Join us in making an even bigger impact. Every volunteer, every donation, every action counts.</p>
+      <div class="flex flex-center gap-sm flex-wrap">
+        <a href="join.html" class="btn btn-primary btn-lg">Get Involved</a>
+        <a href="about.html" class="btn btn-outline btn-lg">Learn Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo"><img src="media/logo.jpg" alt="NiHao Food Bank Initiative" class="logo-img"></div>
+          <p>Together, we inspire youth leadership and build a hunger-free community in North Texas.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="programs.html">Programs</a>
+            <a href="youth.html">Youth Ambassadors</a>
+            <a href="impact.html">Our Impact</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Get Involved</h4>
+          <div class="footer-links">
+            <a href="join.html">Volunteer</a>
+            <a href="join.html#donate">Donate</a>
+            <a href="join.html#partner">Partner With Us</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-links">
+            <a href="mailto:info@nihaofoodinitiative.org">Email Us</a>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 NiHao Food Bank Initiative. All rights reserved.</p>
+        <div class="footer-partnership">
+          <span>Proud partner of the North Texas Food Bank</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
+

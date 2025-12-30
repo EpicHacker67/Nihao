@@ -1,0 +1,20 @@
+# Large video files (exceed GitHub's 100MB limit)
+media/1. Home/Nihao Introduction.mp4
+media/1. Home/1080p - Nihao Food Initiative partners with North Texas Food Bank.mp4
+media/3. Charity Concert/2024 NiHao Charity Concert Video.mov
+media/3. Charity Concert/2025 Charity Concert Video.mp4
+media/3. Peanut Butter/NiHao Peanut Butter Dropoff 2025.mov
+
+# Large video files (>50MB warning)
+media/2. About us/Chapter 1 taking roots (1).mp4
+media/2. About us/Chapter 2 Fast action.mp4
+media/2. About us/Chapter 3 leading the next generation.mp4
+media/2. About us/Chapter 4 Our impact and call to action.mp4
+media/3. Packing Day/LinkedIn_Packing Day Video.mp4
+media/6. Media/Bing Xie_Feeding America.mp4
+media/6. Media/CW33 - Nihao Food Initiative partners with North Texas Food Bank.mp4
+
+# OS files
+.DS_Store
+Thumbs.db
+

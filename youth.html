@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NiHao Youth Ambassador Program - Empowering the next generation of leaders through service, community engagement, and youth development.">
+  <title>Youth Ambassador Program | NiHao Food Bank Initiative</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .youth-hero {
+      background: linear-gradient(135deg, var(--nihao-yellow) 0%, #FFD87A 100%);
+    }
+    .youth-hero .hero-overlay {
+      background: linear-gradient(
+        135deg,
+        rgba(255, 192, 76, 0.75) 0%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+    }
+    .benefit-card {
+      background: var(--pure-white);
+      border-radius: 16px;
+      padding: var(--space-md);
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition-medium);
+      border-top: 4px solid var(--nihao-yellow);
+    }
+    .benefit-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+    }
+    .benefit-icon {
+      font-size: 3rem;
+      margin-bottom: var(--space-sm);
+    }
+    .benefit-card h4 {
+      color: var(--ntfb-green);
+      margin-bottom: 0.5rem;
+    }
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 4px;
+      height: 100%;
+      background: var(--nihao-yellow);
+      border-radius: 2px;
+    }
+    .timeline-item {
+      position: relative;
+      padding: var(--space-md);
+      width: 45%;
+      background: var(--pure-white);
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: var(--space-md);
+    }
+    .timeline-item:nth-child(odd) {
+      margin-left: 55%;
+    }
+    .timeline-item:nth-child(even) {
+      margin-right: 55%;
+      text-align: right;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      background: var(--nihao-yellow);
+      border: 4px solid var(--pure-white);
+      border-radius: 50%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .timeline-item:nth-child(odd)::before {
+      left: -40px;
+    }
+    .timeline-item:nth-child(even)::before {
+      right: -40px;
+    }
+    @media (max-width: 768px) {
+      .timeline::before {
+        left: 20px;
+      }
+      .timeline-item,
+      .timeline-item:nth-child(odd),
+      .timeline-item:nth-child(even) {
+        width: calc(100% - 50px);
+        margin-left: 50px;
+        margin-right: 0;
+        text-align: left;
+      }
+      .timeline-item::before,
+      .timeline-item:nth-child(odd)::before,
+      .timeline-item:nth-child(even)::before {
+        left: -40px;
+        right: auto;
+      }
+    }
+    .testimonial {
+      background: var(--pure-white);
+      border-radius: 16px;
+      padding: var(--space-md);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+    }
+    .testimonial::before {
+      content: '"';
+      position: absolute;
+      top: -10px;
+      left: 20px;
+      font-size: 5rem;
+      color: var(--nihao-yellow);
+      font-family: Georgia, serif;
+      line-height: 1;
+      opacity: 0.5;
+    }
+    .testimonial p {
+      font-style: italic;
+      font-size: 1.1rem;
+      margin-bottom: var(--space-sm);
+      position: relative;
+      z-index: 1;
+    }
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--ntfb-green);
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <img src="media/logo.jpg" alt="NiHao Food Bank Initiative" class="logo-img">
+      </a>
+      <nav>
+        <button class="menu-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About Us</a></li>
+          <li><a href="programs.html" class="nav-link">Programs</a></li>
+          <li><a href="youth.html" class="nav-link active">Youth Ambassadors</a></li>
+          <li><a href="join.html" class="nav-link">Join Us</a></li>
+          <li><a href="impact.html" class="nav-link">Our Impact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero hero-sm youth-hero">
+    <div class="hero-bg">
+      <img src="media/4. Youth Programs/IMG_6775.JPG" alt="NiHao Youth Ambassadors">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <span class="section-tag" style="color: var(--pure-white); border: 2px solid var(--pure-white); padding: 0.5rem 1rem; border-radius: 50px;">Ages 12-18</span>
+      <h1 class="hero-title" style="margin-top: var(--space-sm);">Youth Ambassador Program</h1>
+      <p class="hero-subtitle">Empowering the next generation to serve with heart and build leadership skills that last a lifetime.</p>
+      <a href="join.html" class="btn btn-primary btn-lg">Apply Now</a>
+    </div>
+  </section>
+
+  <!-- Program Overview -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">About the Program</span>
+        <h2 class="section-title">What is the Youth Ambassador Program?</h2>
+      </div>
+      
+      <div class="grid grid-2" style="align-items: center; gap: var(--space-lg);">
+        <div>
+          <p>The NiHao Youth Ambassador Program is designed for young leaders ages 12-18 who want to make a difference in their community while developing valuable life skills.</p>
+          <p>As a Youth Ambassador, you'll participate in hands-on volunteer opportunities, leadership training sessions, and community events throughout the year. You'll join a supportive community of peers who share your passion for service.</p>
+          <p><strong>Program highlights:</strong></p>
+          <ul style="margin-left: 1.5rem;">
+            <li>• Monthly volunteer opportunities at NTFB packing days</li>
+            <li>• Leadership development workshops</li>
+            <li>• Community service hours for school requirements</li>
+            <li>• Annual Youth Ambassador recognition event</li>
+            <li>• Letters of recommendation for college applications</li>
+            <li>• Mentorship from adult volunteers</li>
+          </ul>
+        </div>
+        <div class="video-container">
+          <video controls poster="media/4. Youth Programs/2024 Youth Annual Meeting.jpg">
+            <source src="media/4. Youth Programs/LinkedIn_Packing Day Video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="section bg-sand">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Why Join</span>
+        <h2 class="section-title">Benefits of Being a Youth Ambassador</h2>
+      </div>
+      
+      <div class="grid grid-4">
+        <div class="benefit-card">
+          <div class="benefit-icon">🎯</div>
+          <h4>Leadership Skills</h4>
+          <p>Develop communication, teamwork, and organizational abilities.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📜</div>
+          <h4>Service Hours</h4>
+          <p>Earn volunteer hours that count toward school requirements.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🤝</div>
+          <h4>Community</h4>
+          <p>Connect with like-minded peers who share your values.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">🎓</div>
+          <h4>College Prep</h4>
+          <p>Build your resume and receive recommendation letters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Annual Meetings Gallery -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Our Gatherings</span>
+        <h2 class="section-title">Youth Annual Meetings</h2>
+        <p class="section-desc">Each year, we bring together all Youth Ambassadors for training, recognition, and celebration.</p>
+      </div>
+      
+      <div class="grid grid-2" style="gap: var(--space-lg);">
+        <div class="card">
+          <img src="media/4. Youth Programs/2024 Youth Annual Meeting.jpg" alt="2024 Youth Annual Meeting" class="card-img" style="height: 300px;">
+          <div class="card-body">
+            <h3 class="card-title">2024 Annual Meeting</h3>
+            <p class="card-text">Our 2024 gathering brought together over 100 Youth Ambassadors for a day of leadership training, team building, and recognition of outstanding service.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="media/4. Youth Programs/2025 Youth Annual Meeting.JPG" alt="2025 Youth Annual Meeting" class="card-img" style="height: 300px;">
+          <div class="card-body">
+            <h3 class="card-title">2025 Annual Meeting</h3>
+            <p class="card-text">The 2025 meeting continued our tradition of celebrating youth leadership while introducing new initiatives for the coming year.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Youth in Action -->
+  <section class="section bg-sand">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Youth in Action</span>
+        <h2 class="section-title">Making a Difference Together</h2>
+      </div>
+      
+      <div class="gallery" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="gallery-item"><img src="media/4. Youth Programs/Weixin Image_20250203091244.jpg" alt="Youth volunteers"></div>
+        <div class="gallery-item"><img src="media/4. Youth Programs/Weixin Image_20250629113151.jpg" alt="Youth at event"></div>
+        <div class="gallery-item"><img src="media/4. Youth Programs/Weixin Image_20250629113209.jpg" alt="Youth team"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How to Join Timeline -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get Started</span>
+        <h2 class="section-title">How to Become a Youth Ambassador</h2>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item">
+          <h4 style="color: var(--ntfb-green);">Step 1: Apply Online</h4>
+          <p>Fill out the Youth Ambassador application form with your information and interests.</p>
+        </div>
+        <div class="timeline-item">
+          <h4 style="color: var(--ntfb-green);">Step 2: Orientation</h4>
+          <p>Attend a new member orientation to learn about NiHao and our mission.</p>
+        </div>
+        <div class="timeline-item">
+          <h4 style="color: var(--ntfb-green);">Step 3: First Event</h4>
+          <p>Join your first packing day or community event with fellow ambassadors.</p>
+        </div>
+        <div class="timeline-item">
+          <h4 style="color: var(--ntfb-green);">Step 4: Stay Active</h4>
+          <p>Participate in monthly events, earn hours, and grow your leadership skills!</p>
+        </div>
+      </div>
+      
+      <div class="text-center mt-lg">
+        <a href="join.html" class="btn btn-primary btn-lg">Start Your Application</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section bg-sand">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Hear From Our Ambassadors</span>
+        <h2 class="section-title">What Youth Say About the Program</h2>
+      </div>
+      
+      <div class="grid grid-3">
+        <div class="testimonial">
+          <p>"Being a NiHao Youth Ambassador has taught me that even small actions can create big change. I've grown so much as a leader and made amazing friends."</p>
+          <span class="testimonial-author">- Youth Ambassador, Class of 2024</span>
+        </div>
+        <div class="testimonial">
+          <p>"The skills I learned here - teamwork, communication, and organization - have helped me in school and beyond. Plus, it feels great to help our community!"</p>
+          <span class="testimonial-author">- Youth Ambassador, Class of 2023</span>
+        </div>
+        <div class="testimonial">
+          <p>"I joined because I wanted volunteer hours, but I stayed because of the incredible community. NiHao feels like a second family."</p>
+          <span class="testimonial-author">- Youth Ambassador, Class of 2024</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" style="background: linear-gradient(135deg, var(--nihao-yellow) 0%, #FFD87A 100%);">
+    <div class="container">
+      <h2 style="color: var(--friendly-gray);">Ready to Make Your Mark?</h2>
+      <p style="color: var(--friendly-gray);">Join hundreds of young leaders who are changing North Texas one meal at a time.</p>
+      <div class="flex flex-center gap-sm flex-wrap">
+        <a href="join.html" class="btn btn-green btn-lg">Apply to Be a Youth Ambassador</a>
+        <a href="programs.html" class="btn btn-outline btn-lg" style="border-color: var(--friendly-gray); color: var(--friendly-gray);">View All Programs</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo"><img src="media/logo.jpg" alt="NiHao Food Bank Initiative" class="logo-img"></div>
+          <p>Together, we inspire youth leadership and build a hunger-free community in North Texas.</p>
+        </div>
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="about.html">About Us</a>
+            <a href="programs.html">Programs</a>
+            <a href="youth.html">Youth Ambassadors</a>
+            <a href="impact.html">Our Impact</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Get Involved</h4>
+          <div class="footer-links">
+            <a href="join.html">Volunteer</a>
+            <a href="join.html#donate">Donate</a>
+            <a href="join.html#partner">Partner With Us</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <div class="footer-links">
+            <a href="mailto:info@nihaofoodinitiative.org">Email Us</a>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 NiHao Food Bank Initiative. All rights reserved.</p>
+        <div class="footer-partnership">
+          <span>Proud partner of the North Texas Food Bank</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
+
