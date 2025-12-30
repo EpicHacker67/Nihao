@@ -3,139 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Join the NiHao Food Bank Initiative - Volunteer, donate, or partner with us to build a hunger-free North Texas community.">
-  <title>Join Us | NiHao Food Bank Initiative</title>
+  <meta name="description" content="Join the NiHao Food Bank Initiative - Become an Ambassador, volunteer, or partner with us to build a hunger-free North Texas community.">
+  <title>Join & Pledge | NiHao Food Bank Initiative</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .action-card {
-      background: var(--pure-white);
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      transition: var(--transition-medium);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-    }
-    .action-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-lg);
-    }
-    .action-card-header {
-      padding: var(--space-lg) var(--space-md) var(--space-md);
-      text-align: center;
-    }
-    .action-card-header.volunteer {
-      background: linear-gradient(135deg, var(--ntfb-green) 0%, #6a8236 100%);
-    }
-    .action-card-header.donate {
-      background: linear-gradient(135deg, var(--nihao-red) 0%, #e53333 100%);
-    }
-    .action-card-header.partner {
-      background: linear-gradient(135deg, var(--ntfb-orange) 0%, #f59b2d 100%);
-    }
-    .action-icon {
-      font-size: 4rem;
-      margin-bottom: var(--space-sm);
-    }
-    .action-card-header h3 {
-      color: var(--pure-white);
-      font-size: 1.75rem;
-      margin: 0;
-    }
-    .action-card-body {
-      padding: var(--space-md);
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
-    .action-card-body p {
-      flex: 1;
-    }
-    .action-list {
-      margin: var(--space-sm) 0 var(--space-md);
-    }
-    .action-list li {
-      padding: 0.5rem 0;
-      padding-left: 1.5rem;
-      position: relative;
-    }
-    .action-list li::before {
-      content: '✓';
-      position: absolute;
-      left: 0;
-      color: var(--ntfb-green);
-      font-weight: bold;
-    }
-    .faq-item {
+    .sponsor-table {
+      width: 100%;
+      border-collapse: collapse;
       background: var(--pure-white);
       border-radius: 12px;
-      margin-bottom: var(--space-sm);
-      box-shadow: var(--shadow-sm);
       overflow: hidden;
+      box-shadow: var(--shadow-md);
     }
-    .faq-question {
+    .sponsor-table th {
+      background: var(--ntfb-green);
+      color: var(--pure-white);
       padding: var(--space-md);
-      cursor: pointer;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      text-align: left;
       font-family: var(--font-headline);
       font-weight: 600;
-      color: var(--ntfb-green);
-      transition: var(--transition-fast);
     }
-    .faq-question:hover {
+    .sponsor-table td {
+      padding: var(--space-md);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      vertical-align: top;
+    }
+    .sponsor-table tr:last-child td {
+      border-bottom: none;
+    }
+    .sponsor-table tr:hover td {
       background: var(--warm-sand);
     }
-    .faq-question::after {
-      content: '+';
-      font-size: 1.5rem;
-      color: var(--ntfb-orange);
-      transition: var(--transition-fast);
+    .sponsor-level {
+      font-family: var(--font-headline);
+      font-weight: 700;
+      color: var(--ntfb-green);
     }
-    .faq-item.active .faq-question::after {
-      transform: rotate(45deg);
-    }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-    .faq-answer-inner {
-      padding: 0 var(--space-md) var(--space-md);
-    }
-    .faq-item.active .faq-answer {
-      max-height: 300px;
-    }
-    .contact-card {
+    .sponsor-level.business { color: var(--nihao-red); }
+    .sponsor-level.platinum { color: #666; }
+    .sponsor-level.gold { color: var(--ntfb-orange); }
+    .sponsor-level.silver { color: var(--soft-gray); }
+    .step-card {
       background: var(--pure-white);
       border-radius: 16px;
-      padding: var(--space-lg);
+      padding: var(--space-md);
       box-shadow: var(--shadow-sm);
-      text-align: center;
+      position: relative;
+      padding-left: 80px;
+      min-height: 120px;
     }
-    .contact-icon {
-      width: 60px;
-      height: 60px;
-      background: var(--warm-sand);
+    .step-number {
+      position: absolute;
+      left: var(--space-md);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      background: var(--nihao-red);
+      color: var(--pure-white);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
+      font-family: var(--font-headline);
+      font-weight: 900;
       font-size: 1.5rem;
-      margin: 0 auto var(--space-sm);
     }
-    .contact-card h4 {
+    .step-card h4 {
       color: var(--ntfb-green);
       margin-bottom: 0.5rem;
     }
-    .contact-card a {
-      color: var(--nihao-red);
-      font-weight: 600;
+    .pledge-highlight {
+      background: linear-gradient(135deg, var(--nihao-red) 0%, #e53333 100%);
+      color: var(--pure-white);
+      border-radius: 16px;
+      padding: var(--space-lg);
+      text-align: center;
+      margin: var(--space-lg) 0;
     }
-    .contact-card a:hover {
-      text-decoration: underline;
+    .pledge-amount {
+      font-family: var(--font-headline);
+      font-size: 3rem;
+      font-weight: 900;
+      margin: var(--space-sm) 0;
+    }
+    .benefit-item {
+      background: var(--pure-white);
+      border-radius: 12px;
+      padding: var(--space-md);
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--ntfb-orange);
+    }
+    .benefit-item h4 {
+      color: var(--ntfb-green);
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
@@ -171,244 +132,199 @@
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-      <h1 class="hero-title">Join Our Mission</h1>
-      <p class="hero-subtitle">Every action counts. Whether you volunteer your time, donate resources, or partner with us - together we can build a hunger-free North Texas.</p>
+      <h1 class="hero-title">Join & Pledge</h1>
+      <p class="hero-subtitle">Your decision to join NiHao, whether as an individual, family, student, or corporate partner, directly fuels the movement to end hunger in North Texas. Thank you for stepping up to make a powerful impact.</p>
     </div>
   </section>
 
-  <!-- Ways to Help -->
-  <section class="section">
+  <!-- Become an Ambassador -->
+  <section class="section" id="ambassador">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Get Involved</span>
-        <h2 class="section-title">Ways to Make a Difference</h2>
-        <p class="section-desc">Choose how you'd like to contribute to our mission. Every form of support helps feed our neighbors in need.</p>
+        <span class="section-tag">Join the Movement</span>
+        <h2 class="section-title">Become a NiHao Ambassador</h2>
+        <p class="section-desc">Target Audience: Students (Grades 6-12), Adults, and Families</p>
       </div>
 
-      <div class="grid grid-3">
-        <!-- Volunteer Card -->
-        <div class="action-card" id="volunteer">
-          <div class="action-card-header volunteer">
-            <div class="action-icon">🙋</div>
-            <h3>Volunteer</h3>
-          </div>
-          <div class="action-card-body">
-            <p>Join our team of dedicated volunteers at monthly packing days, community events, and special programs.</p>
-            <ul class="action-list">
-              <li>Monthly packing days at NTFB</li>
-              <li>Community event support</li>
-              <li>Youth mentorship opportunities</li>
-              <li>Administrative assistance</li>
-              <li>Event planning & coordination</li>
-            </ul>
-            <a href="#" class="btn btn-green" style="width: 100%;">Sign Up to Volunteer</a>
+      <div class="grid grid-2" style="align-items: center; gap: var(--space-lg);">
+        <div>
+          <p>Thank you for considering becoming an ambassador of the NiHao Food Bank Initiative! By joining us, you agree to make a philanthropic commitment and join us in raising money for the North Texas Food Bank to provide for hungry children all across North Texas.</p>
+          
+          <div class="pledge-highlight">
+            <p style="margin: 0; font-size: 1.1rem;">The Initial Pledge</p>
+            <div class="pledge-amount">$300</div>
+            <p style="margin: 0;">To ensure every Ambassador starts with a tangible commitment, students are required to make a <strong>$300 initial pledge</strong> directly to the North Texas Food Bank.</p>
           </div>
         </div>
-
-        <!-- Donate Card -->
-        <div class="action-card" id="donate">
-          <div class="action-card-header donate">
-            <div class="action-icon">❤️</div>
-            <h3>Donate</h3>
-          </div>
-          <div class="action-card-body">
-            <p>Your financial contribution goes directly to supporting hunger relief efforts in North Texas through NTFB.</p>
-            <ul class="action-list">
-              <li>100% goes to hunger relief</li>
-              <li>Tax-deductible donations</li>
-              <li>One-time or recurring options</li>
-              <li>Corporate matching available</li>
-              <li>Every $1 provides 3 meals</li>
-            </ul>
-            <a href="#" class="btn btn-primary" style="width: 100%;">Make a Donation</a>
-          </div>
-        </div>
-
-        <!-- Partner Card -->
-        <div class="action-card" id="partner">
-          <div class="action-card-header partner">
-            <div class="action-icon">🤝</div>
-            <h3>Partner</h3>
-          </div>
-          <div class="action-card-body">
-            <p>Organizations and businesses can partner with NiHao to amplify impact and engage your community.</p>
-            <ul class="action-list">
-              <li>Corporate volunteer days</li>
-              <li>Sponsorship opportunities</li>
-              <li>Food and supply drives</li>
-              <li>Event co-hosting</li>
-              <li>Community outreach</li>
-            </ul>
-            <a href="#" class="btn btn-secondary" style="width: 100%;">Become a Partner</a>
-          </div>
+        <div>
+          <img src="media/5. Join and Pledge/DSC05976.JPG" alt="NiHao Ambassadors" style="border-radius: 16px; box-shadow: var(--shadow-lg);">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Upcoming Events -->
+  <!-- Registration Steps -->
+  <section class="section bg-sand" id="register">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">How to Join</span>
+        <h2 class="section-title">Ambassador Registration Steps</h2>
+      </div>
+
+      <div class="grid grid-2" style="gap: var(--space-md);">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h4>Fill in the Credentials</h4>
+          <p>Fill in the credentials on the <a href="https://nihaofoodbankinitiative.weebly.com/uploads/6/3/2/4/63241953/nihao_pledge_-_08192024.pdf" target="_blank" rel="noopener" style="color: var(--nihao-red); font-weight: 600;">pledge form</a> carefully.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h4>Complete the Donation</h4>
+          <p>Go to the <a href="https://ntfb.org" target="_blank" rel="noopener" style="color: var(--nihao-red); font-weight: 600;">North Texas Food Bank website</a> and complete the donation of <strong>$300</strong> on the donation bar. Take a screenshot of the receipt.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h4>Email Documents</h4>
+          <p>Scan the completed pledge form and email it with your donation screenshot to <a href="mailto:yangchen2006@gmail.com" style="color: var(--nihao-red); font-weight: 600;">yangchen2006@gmail.com</a> AND <a href="mailto:nihaofoodbank@gmail.com" style="color: var(--nihao-red); font-weight: 600;">nihaofoodbank@gmail.com</a></p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h4>Submit Membership Form</h4>
+          <p>Fill out and submit the <a href="https://forms.gle/PptSgS4iTEWbmxMb9" target="_blank" rel="noopener" style="color: var(--nihao-red); font-weight: 600;">membership form</a>.</p>
+        </div>
+      </div>
+
+      <div style="background: var(--pure-white); border-radius: 12px; padding: var(--space-md); text-align: center; margin-top: var(--space-lg); box-shadow: var(--shadow-sm);">
+        <p style="font-size: 1.1rem; margin: 0;"><strong>All finished?</strong> Please be patient for the next couple of days waiting for an approval or response. Thank you again for joining us to support child hunger in North Texas with NiHao.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corporate Partnership -->
+  <section class="section" id="partner">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Corporate Partners</span>
+        <h2 class="section-title">Corporate Partnership</h2>
+        <p class="section-desc">We invite corporations and organizations to make a sustainable impact through a three-year pledge to one of our Sponsorship Circles. Your partnership is a powerful force in the fight against hunger.</p>
+      </div>
+
+      <h3 style="text-align: center; margin-bottom: var(--space-md);">Sponsorship Levels and Impact</h3>
+
+      <div style="overflow-x: auto;">
+        <table class="sponsor-table">
+          <thead>
+            <tr>
+              <th>Level</th>
+              <th>Donation (Over 3 Years)</th>
+              <th>Meals Enabled</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="sponsor-level business">Business Partner</span></td>
+              <td><strong>$50,000</strong></td>
+              <td>150,000 meals</td>
+              <td>Business Partner members stand among our strongest advocates in the fight against hunger. They raise hunger awareness through speaking engagements, meet with community groups, and seek out opportunities to represent NiHao in North Texas.</td>
+            </tr>
+            <tr>
+              <td><span class="sponsor-level platinum">Platinum</span></td>
+              <td><strong>$20,000</strong></td>
+              <td>60,000 meals</td>
+              <td>Platinum members are the pillars of NiHao. These members ensure that the goals of the council are up-to-date and align with the overall mission to combat hunger.</td>
+            </tr>
+            <tr>
+              <td><span class="sponsor-level gold">Gold</span></td>
+              <td><strong>$10,000</strong></td>
+              <td>30,000 meals</td>
+              <td>Gold members rally behind the cause of fighting hunger and enable putting nutritious food on the table for hungry North Texans.</td>
+            </tr>
+            <tr>
+              <td><span class="sponsor-level silver">Silver</span></td>
+              <td><strong>$3,000</strong></td>
+              <td>9,000 meals</td>
+              <td>Silver members are the building blocks of the NiHao movement. They make up the bulk of NiHao's contributions and volunteers.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partnership Benefits -->
   <section class="section bg-sand">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag">Upcoming Opportunities</span>
-        <h2 class="section-title">Next Volunteer Events</h2>
+        <span class="section-tag">Why Partner</span>
+        <h2 class="section-title">Key Partnership Benefits</h2>
+        <p class="section-desc">NiHao welcomes corporate partnerships, including sponsorships, donation matching, and employee volunteer events.</p>
       </div>
 
       <div class="grid grid-3">
-        <div class="card">
-          <div class="card-body" style="border-left: 4px solid var(--ntfb-green);">
-            <span class="section-tag" style="margin-bottom: 0.5rem;">Monthly Event</span>
-            <h4 style="color: var(--ntfb-green); margin-bottom: 0.5rem;">Packing Day</h4>
-            <p style="color: var(--soft-gray); margin-bottom: var(--space-sm);">Join us at the North Texas Food Bank for our monthly packing day. Families welcome!</p>
-            <p style="margin: 0;"><strong>Location:</strong> NTFB Warehouse, Plano</p>
-            <p style="margin: 0;"><strong>Time:</strong> 9:00 AM - 12:00 PM</p>
-            <a href="#" class="btn btn-green mt-md" style="width: 100%;">Register</a>
-          </div>
+        <div class="benefit-item">
+          <h4>📣 Brand Visibility</h4>
+          <p>Promote on NiHao's marketing materials and social media accounts, reaching thousands of engaged community members.</p>
         </div>
-
-        <div class="card">
-          <div class="card-body" style="border-left: 4px solid var(--nihao-red);">
-            <span class="section-tag" style="margin-bottom: 0.5rem;">Annual Event</span>
-            <h4 style="color: var(--ntfb-green); margin-bottom: 0.5rem;">Charity Concert 2025</h4>
-            <p style="color: var(--soft-gray); margin-bottom: var(--space-sm);">Our biggest fundraising event of the year featuring incredible performances.</p>
-            <p style="margin: 0;"><strong>Location:</strong> TBD</p>
-            <p style="margin: 0;"><strong>Time:</strong> Evening Event</p>
-            <a href="#" class="btn btn-primary mt-md" style="width: 100%;">Learn More</a>
-          </div>
+        <div class="benefit-item">
+          <h4>🏆 Community Recognition</h4>
+          <p>Receive a Recognition Certificate at NiHao's Annual Meeting. Business Partner and Platinum sponsors receive interview spotlights.</p>
         </div>
-
-        <div class="card">
-          <div class="card-body" style="border-left: 4px solid var(--ntfb-orange);">
-            <span class="section-tag" style="margin-bottom: 0.5rem;">Seasonal</span>
-            <h4 style="color: var(--ntfb-green); margin-bottom: 0.5rem;">Peanut Butter Drive</h4>
-            <p style="color: var(--soft-gray); margin-bottom: var(--space-sm);">Help us collect peanut butter jars for families in need. Great for groups!</p>
-            <p style="margin: 0;"><strong>Location:</strong> Various collection points</p>
-            <p style="margin: 0;"><strong>Duration:</strong> Ongoing</p>
-            <a href="#" class="btn btn-secondary mt-md" style="width: 100%;">Get Involved</a>
-          </div>
+        <div class="benefit-item">
+          <h4>🤝 Service & Engagement</h4>
+          <p>Quarterly invitations for your team to participate in Mega Packing Days. Business Partner sponsors gain access to co-branded campaigns.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ Section -->
+  <!-- Matching Gifts -->
   <section class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Questions?</span>
-        <h2 class="section-title">Frequently Asked Questions</h2>
-      </div>
-
-      <div style="max-width: 800px; margin: 0 auto;">
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            How old do I need to be to volunteer?
-          </div>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              <p>Youth ages 8 and up can participate in packing days with adult supervision. Youth ages 12-18 can join our Youth Ambassador Program for more leadership opportunities. Adults of all ages are welcome!</p>
-            </div>
-          </div>
+      <div class="grid grid-2" style="align-items: center; gap: var(--space-lg);">
+        <div>
+          <span class="section-tag">Double Your Impact</span>
+          <h2 class="section-title">Matching Gifts</h2>
+          <p>Encourage your employees to utilize corporate matching gift programs to double the impact of their personal donations to the NTFB.</p>
+          <p>Many employers will match charitable contributions made by their employees. If you need any details to support the matching gifts, please email us.</p>
+          <a href="mailto:nihaofoodbank@gmail.com" class="btn btn-primary mt-md">Contact Us About Matching</a>
         </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            How often are packing days held?
-          </div>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              <p>We hold packing days every month at the North Texas Food Bank warehouse. The specific date varies, so check our events calendar or sign up for our newsletter to get notified.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            Can I bring a group or team?
-          </div>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              <p>Absolutely! We welcome corporate teams, school groups, scout troops, and community organizations. Contact us to arrange a group volunteer session.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            How do I get community service hours?
-          </div>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              <p>We provide verification of volunteer hours for all participants. After each event, you'll receive documentation that can be used for school requirements, college applications, or other purposes.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            Where do donations go?
-          </div>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              <p>All donations to NiHao Food Bank Initiative go directly to supporting hunger relief efforts through the North Texas Food Bank. NTFB is one of the largest and most efficient food banks in the country, with every $1 providing approximately 3 meals.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <div class="faq-question" onclick="toggleFaq(this)">
-            How can my business become a partner?
-          </div>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              <p>We offer various partnership opportunities including sponsorships, corporate volunteer days, food drives, and event co-hosting. Contact us to discuss how we can work together to support our community.</p>
-            </div>
-          </div>
+        <div style="background: var(--warm-sand); border-radius: 16px; padding: var(--space-lg); text-align: center;">
+          <div style="font-size: 4rem; margin-bottom: var(--space-sm);">🎁</div>
+          <h3 style="color: var(--ntfb-green);">2x Impact</h3>
+          <p style="margin: 0;">Corporate matching can double every donation, providing twice as many meals for families in need.</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Contact Section -->
-  <section class="section bg-sand">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Get in Touch</span>
-        <h2 class="section-title">Contact Us</h2>
-        <p class="section-desc">Have questions or want to learn more? We'd love to hear from you!</p>
+  <section class="section bg-green">
+    <div class="container text-center">
+      <span class="section-tag" style="color: var(--nihao-yellow);">Get in Touch</span>
+      <h2 class="section-title" style="color: var(--pure-white);">Contact Us</h2>
+      <p style="color: var(--pure-white); opacity: 0.9; max-width: 600px; margin: 0 auto var(--space-md);">
+        For collaboration inquiries, questions about becoming an ambassador, or partnership opportunities, please reach out.
+      </p>
+      <div style="background: rgba(255,255,255,0.1); border-radius: 12px; padding: var(--space-md); display: inline-block;">
+        <p style="color: var(--pure-white); font-size: 1.25rem; margin: 0;">
+          📧 <a href="mailto:nihaofoodbank@gmail.com" style="color: var(--nihao-yellow); font-weight: 700;">nihaofoodbank@gmail.com</a>
+        </p>
       </div>
-
-      <div class="grid grid-3">
-        <div class="contact-card">
-          <div class="contact-icon">📧</div>
-          <h4>Email</h4>
-          <p>General inquiries and volunteer questions</p>
-          <a href="mailto:info@nihaofoodinitiative.org">info@nihaofoodinitiative.org</a>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon">📱</div>
-          <h4>Social Media</h4>
-          <p>Follow us for updates and event announcements</p>
-          <a href="#">@NiHaoFoodInitiative</a>
-        </div>
-        <div class="contact-card">
-          <div class="contact-icon">📍</div>
-          <h4>Location</h4>
-          <p>Serving the greater North Texas area</p>
-          <span style="color: var(--soft-gray);">Dallas-Fort Worth Metroplex</span>
-        </div>
-      </div>
+      <p style="color: var(--pure-white); opacity: 0.8; margin-top: var(--space-md); font-size: 0.95rem;">
+        All contributions go directly to NTFB and are tax-deductible.
+      </p>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="cta-section bg-green">
+  <section class="cta-section" style="background: var(--warm-sand);">
     <div class="container">
-      <h2>Small Actions, Big Change</h2>
-      <p>Every volunteer matters. Every donation counts. Together, we can end hunger in North Texas.</p>
+      <h2 style="color: var(--friendly-gray);">Ready to Make a Difference?</h2>
+      <p style="color: var(--friendly-gray);">Join thousands of community members who are fighting hunger in North Texas.</p>
       <div class="flex flex-center gap-sm flex-wrap">
-        <a href="#volunteer" class="btn btn-primary btn-lg">Volunteer Now</a>
-        <a href="#donate" class="btn btn-outline btn-lg">Donate Today</a>
+        <a href="https://ntfb.org/donate" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Donate to NTFB</a>
+        <a href="#ambassador" class="btn btn-green btn-lg">Become an Ambassador</a>
       </div>
     </div>
   </section>
@@ -419,38 +335,38 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="logo"><img src="media/logo.jpg" alt="NiHao Food Bank Initiative" class="logo-img"></div>
-          <p>Together, we inspire youth leadership and build a hunger-free community in North Texas.</p>
+          <p>NiHao Food Bank Initiative is a cultural affinity program of the North Texas Food Bank (NTFB).</p>
         </div>
         <div>
           <h4 class="footer-title">Quick Links</h4>
           <div class="footer-links">
+            <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
-            <a href="programs.html">Programs</a>
-            <a href="youth.html">Youth Ambassadors</a>
-            <a href="impact.html">Our Impact</a>
+            <a href="join.html">Join & Pledge</a>
           </div>
         </div>
         <div>
-          <h4 class="footer-title">Get Involved</h4>
+          <h4 class="footer-title">Programs & Impact</h4>
           <div class="footer-links">
-            <a href="join.html">Volunteer</a>
-            <a href="join.html#donate">Donate</a>
-            <a href="join.html#partner">Partner With Us</a>
+            <a href="programs.html">Programs & Events</a>
+            <a href="impact.html">Impact & Achievements</a>
+            <a href="impact.html#news">News & Media</a>
           </div>
         </div>
         <div>
-          <h4 class="footer-title">Contact</h4>
+          <h4 class="footer-title">Contact Us</h4>
           <div class="footer-links">
-            <a href="mailto:info@nihaofoodinitiative.org">Email Us</a>
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
+            <a href="mailto:nihaofoodbank@gmail.com">nihaofoodbank@gmail.com</a>
+            <a href="https://www.instagram.com/nihao_foodbank_initiative" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://www.facebook.com/nihaofoodbankinitiative" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.linkedin.com/company/nihao-foodbank-initiative" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
         <p>&copy; 2025 NiHao Food Bank Initiative. All rights reserved.</p>
         <div class="footer-partnership">
-          <span>Proud partner of the North Texas Food Bank</span>
+          <span>All financial contributions go directly to the North Texas Food Bank and are tax-deductible.</span>
         </div>
       </div>
     </div>
@@ -460,22 +376,6 @@
     function toggleMenu() {
       document.getElementById('navMenu').classList.toggle('active');
     }
-
-    function toggleFaq(element) {
-      const faqItem = element.parentElement;
-      const wasActive = faqItem.classList.contains('active');
-      
-      // Close all FAQ items
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-      });
-      
-      // Open clicked one if it wasn't already open
-      if (!wasActive) {
-        faqItem.classList.add('active');
-      }
-    }
   </script>
 </body>
 </html>
-
